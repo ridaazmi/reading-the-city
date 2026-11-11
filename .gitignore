@@ -1,0 +1,18 @@
+# Local tooling
+.claude/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Source documents and raw outputs never go in the public repo
+*.docx
+*.pdf
+*.ipynb
+*.gpkg
+*.tif
+outputs/
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reading the City — Kinshasa flood vulnerability</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <a class="logo" href="https://cus.um6p.ma/home"target="_blank" rel="noopener" title="Center of Urban Systems, UM6P"><img src="img/logo-cus.png" alt="CUS — Center of Urban Systems, UM6P" width="171" height="38"></a>
+    <div>
+      <div class="title" data-i18n="app_title">Reading the City</div>
+      <div class="subtitle" data-i18n="app_subtitle">AI-guided flood vulnerability mapping — Kinshasa prototype</div>
+    </div>
+  </div>
+  <div class="controls">
+    <label class="sel"><span data-i18n="neighborhood">Neighborhood</span>
+      <select id="runSelect"></select></label>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" class="on">EN</button><button data-lang="fr">FR</button>
+    </div>
+  </div>
+</header>
+<nav class="tabs" id="tabs">
+  <button data-tab="overview" class="on" data-i18n="tab_overview">Overview</button>
+  <button data-tab="explore" data-i18n="tab_explore">Explore blocks</button>
+  <button data-tab="street" data-i18n="tab_street">Sky vs street</button>
+  <button data-tab="rain" data-i18n="tab_rain">Rainfall scenario</button>
+  <button data-tab="reliability" data-i18n="tab_reliability">Reliability &amp; limits</button>
+  <button data-tab="method" data-i18n="tab_method">Method &amp; responsible AI</button>
+  <button data-tab="contact" class="cta" data-i18n="tab_contact">Work with us</button>
+</nav>
+<div class="banner" data-i18n-html="banner">Prototype results, pre-computed. <b>Not yet validated in the field</b>: the pilot will measure accuracy with municipal field teams.</div>
+
+<main>
+  <section id="overview" class="tab on"></section>
+  <section id="explore" class="tab">
+    <div class="split">
+      <div class="mapwrap">
+        <div id="map" class="map"></div>
+        <div class="maptools">
+          <div class="seg" id="colorBy">
+            <button data-mode="risk" class="on" data-i18n="color_risk">Flood risk</button>
+            <button data-mode="vuln" data-i18n="color_vuln">AI-perceived vulnerability</button>
+            <button data-mode="audit" data-i18n="color_audit">Field audit</button>
+          </div>
+          <label class="chk"><input type="checkbox" id="showBld" checked> <span data-i18n="show_buildings">Buildings</span></label>
+        </div>
+        <div class="legend" id="legend"></div>
+      </div>
+      <aside class="panel" id="cellPanel"></aside>
+    </div>
+  </section>
+  <section id="street" class="tab"></section>
+  <section id="rain" class="tab">
+    <div class="split">
+      <div class="mapwrap"><div id="rainMap" class="map"></div><div class="legend" id="rainLegend"></div></div>
+      <aside class="panel" id="rainPanel"></aside>
+    </div>
+  </section>
+  <section id="reliability" class="tab"></section>
+  <section id="method" class="tab"></section>
+  <section id="contact" class="tab"></section>
+</main>
+<footer class="foot" data-i18n-html="footer">Center of Urban Systems, UM6P · in partnership with the City of Kinshasa · Imagery © Esri World Imagery · Street photos © Mapillary contributors, CC BY-SA 4.0 · Map data © OpenStreetMap contributors · AI-generated text is labelled as such.</footer>
+
+<div class="tip" id="tip" role="tooltip"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/index.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
